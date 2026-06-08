@@ -1,0 +1,137 @@
+%PDF-1.4
+1 0 obj
+<< /Type /Catalog /Pages 2 0 R >>
+endobj
+2 0 obj
+<< /Type /Pages /Kids [6 0 R 8 0 R] /Count 2 >>
+endobj
+3 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica >>
+endobj
+4 0 obj
+<< /Type /Font /Subtype /Type1 /BaseFont /Helvetica-Bold >>
+endobj
+5 0 obj
+<< /Length 6512 >>
+stream
+BT /F2 18.0 Tf 262.8 758.0 Td (Qimin Feng) Tj ET
+BT /F1 9.0 Tf 144.0 735.0 Td (Ames, IA | qmfeng11@iastate.edu | 515-441-3300 | linkedin.com/in/qimin-feng) Tj ET
+BT /F2 10.8 Tf 42.0 715.1 Td (PROFESSIONAL SUMMARY) Tj ET
+42.0 704.9 m 570.0 704.9 l S
+BT /F1 8.9 Tf 42.0 700.9 Td (Robotics Ph.D. candidate focused on bio-inspired underwater robots, embedded control, soft robotic actuation, and flow-) Tj ET
+BT /F1 8.9 Tf 42.0 690.0 Td (aware perception. Builds robot systems from hardware integration and real-time control to experimental validation and) Tj ET
+BT /F1 8.9 Tf 42.0 679.2 Td (ML-based sensing. Strongest in project-driven robotics R&D where mechanical design, embedded systems, sensing, and) Tj ET
+BT /F1 8.9 Tf 42.0 668.3 Td (hydrodynamics meet.) Tj ET
+BT /F2 10.8 Tf 42.0 653.0 Td (TECHNICAL SKILLS) Tj ET
+42.0 642.8 m 570.0 642.8 l S
+BT /F1 8.9 Tf 42.0 638.8 Td (Programming and Systems: Python, C/C++, MATLAB, Linux, Git, FastAPI/WebSocket, Flask) Tj ET
+BT /F1 8.9 Tf 42.0 627.4 Td (Robotics and Embedded Hardware: Raspberry Pi, ESP32, Arduino, CAN bus, I2C, PWM; motor drivers, voice-coil actuators,) Tj ET
+BT /F1 8.9 Tf 42.0 616.6 Td (magnetic encoders, IMU, pressure/force sensors, NI DAQ) Tj ET
+BT /F1 8.9 Tf 42.0 605.2 Td (Robotics and Controls: real-time control, motor/servo/VCA control, sensor-actuator integration, impedance shaping,) Tj ET
+BT /F1 8.9 Tf 42.0 594.3 Td (safety interlocks, experimental testbeds) Tj ET
+BT /F1 8.9 Tf 42.0 583.0 Td (Experimental and Simulation Analysis: PIV & post-processing, hydrodynamic experiments design, SolidWorks, POD/reduced-) Tj ET
+BT /F1 8.9 Tf 42.0 572.1 Td (order modeling, MuJoCo, reinforcement learning) Tj ET
+BT /F1 8.9 Tf 42.0 560.8 Td (Perception and Machine Learning: PyTorch, CNN/LSTM/attention, sparse sensing, sensor fusion, physics-informed learning,) Tj ET
+BT /F1 8.9 Tf 42.0 549.9 Td (uncertainty estimation, vortex/flow-feature detection) Tj ET
+BT /F2 10.8 Tf 42.0 534.6 Td (EDUCATION) Tj ET
+42.0 524.4 m 570.0 524.4 l S
+BT /F1 8.9 Tf 42.0 520.4 Td (Iowa State University, Ames, IA) Tj ET
+BT /F1 8.9 Tf 42.0 509.0 Td (Ph.D. Candidate, Mechanical Engineering | Expected Dec 2027) Tj ET
+BT /F1 8.9 Tf 42.0 497.7 Td (Research focus: bio-inspired robotics, underwater locomotion, flow sensing, fluid-structure interaction | GPA: 3.97/4.00) Tj ET
+BT /F1 8.9 Tf 42.0 486.3 Td (Zhejiang University, Hangzhou, China) Tj ET
+BT /F1 8.9 Tf 42.0 474.9 Td (B.S., Agricultural and Biosystem Engineering | Jun 2022) Tj ET
+BT /F1 8.9 Tf 42.0 463.6 Td (GPA: 3.35/4.00) Tj ET
+BT /F2 10.8 Tf 42.0 448.2 Td (RESEARCH EXPERIENCE) Tj ET
+42.0 438.1 m 570.0 438.1 l S
+BT /F1 8.9 Tf 42.0 434.1 Td (Graduate Research Assistant, Zhong Lab, Iowa State University | Jan 2023 - Present) Tj ET
+BT /F2 9.8 Tf 42.0 420.7 Td (MantaBot: Bio-Inspired Underwater Robot Control Stack) Tj ET
+BT /F1 8.9 Tf 52.0 408.7 Td (- Built the embedded software architecture for a manta ray-inspired underwater robot, integrating gamepad) Tj ET
+BT /F1 8.9 Tf 52.0 397.9 Td (  control, CAN motors, PWM servos, IMU, pressure sensing, and telemetry.) Tj ET
+BT /F1 8.9 Tf 52.0 386.5 Td (- Developed field-debugging tools including a FastAPI/WebSocket dashboard, Linux/systemd deployment workflow,) Tj ET
+BT /F1 8.9 Tf 52.0 375.7 Td (  Tailscale networking, thermal protection, and actuator safety limits.) Tj ET
+BT /F1 8.9 Tf 52.0 364.3 Td (- Designed free-swimming ground-effect experiments using onboard torque feedback, depth sensing, and overhead) Tj ET
+BT /F1 8.9 Tf 52.0 353.5 Td (  tracking to connect robot behavior with hydrodynamic theory.) Tj ET
+BT /F2 9.8 Tf 42.0 340.1 Td (Voice-Coil Actuator Control for Soft Robotics) Tj ET
+BT /F1 8.9 Tf 52.0 328.1 Td (- Implemented dual voice-coil actuator firmware on ESP32 with PWM drive, serial command parsing, Python) Tj ET
+BT /F1 8.9 Tf 52.0 317.3 Td (  trajectory generation, and encoder-ready pin allocation.) Tj ET
+BT /F1 8.9 Tf 52.0 305.9 Td (- Debugged GPIO/JTAG conflicts, boot-state glitches, motor-driver behavior, and wiring constraints to produce) Tj ET
+BT /F1 8.9 Tf 52.0 295.1 Td (  a stable multi-actuator soft-robotics control setup.) Tj ET
+BT /F1 8.9 Tf 52.0 283.7 Td (- Designed an ESP-NOW commander-driver architecture with watchdog safety stops and per-node feedback for) Tj ET
+BT /F1 8.9 Tf 52.0 272.8 Td (  scalable wireless actuation experiments.) Tj ET
+BT /F2 9.8 Tf 42.0 259.5 Td (CLD Passive Impedance Shaping and RL Exploration) Tj ET
+BT /F1 8.9 Tf 52.0 247.5 Td (- Led experimental validation of constrained-layer damping as passive impedance shaping for soft robotic) Tj ET
+BT /F1 8.9 Tf 52.0 236.7 Td (  swimmers, achieving about 5x peak acceleration and 3x terminal velocity over baseline.) Tj ET
+BT /F1 8.9 Tf 52.0 225.3 Td (- Characterized complex bending impedance of CLD sandwich structures using torque sensing, dry bender tests,) Tj ET
+BT /F1 8.9 Tf 52.0 214.5 Td (  lock-in harmonic regression, constrained propulsion, and phase-resolved PIV.) Tj ET
+BT /F1 8.9 Tf 52.0 203.1 Td (- Designed a MuJoCo/Gymnasium RL framework where frequency-dependent material impedance reduces swimming) Tj ET
+BT /F1 8.9 Tf 52.0 192.2 Td (  control to frequency and amplitude while improving sim-to-real robustness.) Tj ET
+BT /F2 9.8 Tf 42.0 178.9 Td (Flow Sensing and ML-Based Perception) Tj ET
+BT /F1 8.9 Tf 52.0 166.9 Td (- Built PyTorch sparse-to-full flow reconstruction models that infer velocity and vorticity structure from) Tj ET
+BT /F1 8.9 Tf 52.0 156.1 Td (  local PIV patches around a NACA 0012 foil.) Tj ET
+BT /F1 8.9 Tf 52.0 144.7 Td (- Designed vortex-focused metrics, physics-informed losses, and a dual-pathway PIV-plus-pressure architecture) Tj ET
+BT /F1 8.9 Tf 52.0 133.9 Td (  with attention and ensemble uncertainty.) Tj ET
+BT /F1 8.9 Tf 52.0 122.5 Td (- Redesigned data collection around Strouhal number, foil spacing, and chord variation, using active learning) Tj ET
+BT /F1 8.9 Tf 52.0 111.6 Td (  to prioritize informative wake-topology cases.) Tj ET
+BT /F2 9.8 Tf 42.0 98.3 Td (Heaving Foil Near a Free Surface: Experimental Hydrodynamics) Tj ET
+BT /F1 8.9 Tf 52.0 86.3 Td (- Executed heaving hydrofoil experiments near a deformable free surface using force sensing, PIV, potential-) Tj ET
+BT /F1 8.9 Tf 52.0 75.5 Td (  flow simulation, and wave-theory analysis.) Tj ET
+BT /F1 8.9 Tf 52.0 64.1 Td (- Identified vortex-surface phase coupling as the mechanism behind lift reversal, linking unsteady-number) Tj ET
+BT /F1 8.9 Tf 52.0 53.3 Td (  effects to vertical force generation.) Tj ET
+endstream
+endobj
+6 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 5 0 R >>
+endobj
+7 0 obj
+<< /Length 2920 >>
+stream
+BT /F1 8.9 Tf 52.0 758.0 Td (- Processed experimental datasets in Python and MATLAB, supporting manuscript revision with PIV evidence,) Tj ET
+BT /F1 8.9 Tf 52.0 747.1 Td (  hydrodynamic decomposition, and free-surface validation.) Tj ET
+BT /F2 10.8 Tf 42.0 731.8 Td (ADDITIONAL ENGINEERING PROJECTS) Tj ET
+42.0 721.6 m 570.0 721.6 l S
+BT /F2 9.8 Tf 42.0 715.6 Td (Applied PIV Collaboration with John Deere) Tj ET
+BT /F1 8.9 Tf 52.0 703.7 Td (- Supported applied PIV experiments for engineering flow analysis, contributing imaging setup, data) Tj ET
+BT /F1 8.9 Tf 52.0 692.8 Td (  processing, and interpretation for industry-facing measurements.) Tj ET
+BT /F1 8.9 Tf 52.0 681.4 Td (- Translated experimental flow diagnostics into actionable observations, strengthening practical test planning) Tj ET
+BT /F1 8.9 Tf 52.0 670.6 Td (  and communication with external collaborators.) Tj ET
+BT /F2 9.8 Tf 42.0 657.2 Td (ClearCoach: Computer Vision Video Analysis Tool) Tj ET
+BT /F1 8.9 Tf 52.0 645.3 Td (- Built and deployed a Flask/OpenCV web application that identifies five badminton stroke phases from uploaded) Tj ET
+BT /F1 8.9 Tf 52.0 634.4 Td (  clips using LLM-vision APIs.) Tj ET
+BT /F1 8.9 Tf 52.0 623.0 Td (- Designed a contact-sheet inference pipeline with structured JSON outputs, showing practical full-stack) Tj ET
+BT /F1 8.9 Tf 52.0 612.2 Td (  deployment, vision preprocessing, and prompt-based model integration.) Tj ET
+BT /F2 10.8 Tf 42.0 596.8 Td (SELECTED PUBLICATIONS) Tj ET
+42.0 586.7 m 570.0 586.7 l S
+BT /F1 8.9 Tf 42.0 582.7 Td (Feng, Q., Roberts, O. A., and Zhong, Q. "Passive Phase-Oriented Impedance Shaping for Rapid Acceleration in Soft Robotic) Tj ET
+BT /F1 8.9 Tf 42.0 571.8 Td (Swimmers." arXiv:2603.03537, submitted to IROS 2026.) Tj ET
+BT /F1 8.9 Tf 42.0 560.4 Td (Feng, Q., Han, T., and Zhong, Q. "Lift reversal from vortex-surface phase coupling in a heaving foil near a free) Tj ET
+BT /F1 8.9 Tf 42.0 549.6 Td (surface." arXiv:2512.12485, 2025.) Tj ET
+BT /F1 8.9 Tf 42.0 538.2 Td (Zhu, Y., Liu, L., Han, T., Feng, Q., Moored, K. W., Zhong, Q., and Quinn, D. B. "Wavenumber affects the lift of ray-) Tj ET
+BT /F1 8.9 Tf 42.0 527.4 Td (inspired fins near a substrate." Journal of the Royal Society Interface, 22:20250276, 2025.) Tj ET
+BT /F1 8.9 Tf 42.0 516.0 Td (Feng, Q. and Zhong, Q. "Mantabot Swimming Performance." Manuscript in preparation.) Tj ET
+BT /F2 10.8 Tf 42.0 500.7 Td (HONORS AND PRESENTATIONS) Tj ET
+42.0 490.5 m 570.0 490.5 l S
+BT /F1 8.9 Tf 42.0 486.5 Td (Link Foundation Ocean Engineering and Instrumentation Fellowship | Jul 2024) Tj ET
+BT /F1 8.9 Tf 42.0 475.1 Td (Presentation, Annual Meeting of the APS Division of Fluid Dynamics | Nov 2024) Tj ET
+BT /F1 8.9 Tf 42.0 463.8 Td (Presentation, CoMFRE Annual Meeting, Iowa State University | Oct 2024) Tj ET
+BT /F1 8.9 Tf 42.0 452.4 Td (National Undergraduate Academic Science and Technology Competition | Oct 2021) Tj ET
+endstream
+endobj
+8 0 obj
+<< /Type /Page /Parent 2 0 R /MediaBox [0 0 612 792] /Resources << /Font << /F1 3 0 R /F2 4 0 R >> >> /Contents 7 0 R >>
+endobj
+xref
+0 9
+0000000000 65535 f 
+0000000009 00000 n 
+0000000058 00000 n 
+0000000121 00000 n 
+0000000191 00000 n 
+0000000266 00000 n 
+0000006830 00000 n 
+0000006966 00000 n 
+0000009938 00000 n 
+trailer
+<< /Size 9 /Root 1 0 R >>
+startxref
+10074
+%%EOF
