@@ -84,38 +84,83 @@ function Reveal({ children, className = "", delay = 0, as = "div", ...rest }) {
   );
 }
 
-/* Media slot — reserved space the user fills with image/video later.
-   If `src` is provided it renders the media; otherwise a labelled placeholder. */
+function FlowSensingDiagram() {
+  return (
+    <div className="flow-diagram" role="img" aria-label="Five pressure sensors and a PIV system synchronized by a Teensy trigger, feeding a flow reconstruction model">
+      <div className="flow-diagram-top">
+        <div className="flow-node flow-node-accent">
+          <span className="flow-node-kicker">Real-time controller</span>
+          <strong>Teensy</strong>
+          <small>shared μs clock</small>
+        </div>
+        <span className="flow-connector">→</span>
+        <div className="flow-node">
+          <span className="flow-node-kicker">Pressure array</span>
+          <strong>5 × MS5803</strong>
+          <small>80 Hz · I²C mux</small>
+        </div>
+        <span className="flow-connector flow-connector-split">↘</span>
+        <div className="flow-node">
+          <span className="flow-node-kicker">Optical field</span>
+          <strong>PIV / PTU-X</strong>
+          <small>1 ms TTL trigger</small>
+        </div>
+      </div>
+      <div className="flow-sync-line"><span>hardware synchronized</span></div>
+      <div className="flow-output">
+        <span className="flow-output-input">sparse pressure + PIV patches</span>
+        <span className="flow-connector">→</span>
+        <div className="flow-node flow-node-output">
+          <span className="flow-node-kicker">Sensor fusion</span>
+          <strong>Full-field reconstruction</strong>
+          <small>velocity · vorticity · uncertainty</small>
+        </div>
+      </div>
+    </div>
+  );
+}
+
+function MediaItem({ item }) {
+  if (item.type === "video") {
+    return (
+      <video
+        src={item.src}
+        aria-label={item.alt || "Project video"}
+        autoPlay
+        muted
+        loop
+        playsInline
+        preload="metadata"
+      ></video>
+    );
+  }
+  return <img src={item.src} alt={item.alt || ""} loading="lazy" />;
+}
+
+/* Project media supports a single asset, a two-up gallery, or the sensing diagram. */
 function MediaSlot({ media, src }) {
   const ratio = (media && media.ratio) || "4 / 3";
-  const isVideo = media && media.type === "video";
+  const sources = (media && media.sources) || (src ? [{ type: media.type, src }] : []);
+  const isDiagram = media && media.type === "diagram";
   return (
-    <div className="media-slot" style={{ "--slot-ratio": ratio }}>
-      {src ? (
-        isVideo ? (
-          <video src={src} autoPlay muted loop playsInline></video>
-        ) : (
-          <img src={src} alt="" />
-        )
+    <div className={`media-slot ${sources.length > 1 ? "media-slot-duo" : ""} ${isDiagram ? "media-slot-diagram" : ""}`} style={{ "--slot-ratio": ratio }}>
+      {isDiagram ? (
+        <FlowSensingDiagram />
+      ) : sources.length ? (
+        <div className="media-grid">
+          {sources.map((item, i) => (
+            <div className="media-item" key={`${item.src}-${i}`}>
+              <MediaItem item={item} />
+            </div>
+          ))}
+        </div>
       ) : (
         <div className="media-label">
-          <span className="glyph" aria-hidden="true">
-            {isVideo ? (
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
-                <rect x="3" y="5" width="18" height="14" rx="2.5"></rect>
-                <path d="M10 9l5 3-5 3z" fill="currentColor" stroke="none"></path>
-              </svg>
-            ) : (
-              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.6">
-                <rect x="3" y="4" width="18" height="16" rx="2.5"></rect>
-                <circle cx="8.5" cy="9.5" r="1.6"></circle>
-                <path d="M21 16l-5-5-7 7"></path>
-              </svg>
-            )}
-          </span>
           <span className="mt"><Bi value={media.label} /></span>
-          <span className="ms">{isVideo ? "video" : "image"} · {media.note}</span>
         </div>
+      )}
+      {media && media.label && (sources.length || isDiagram) && (
+        <div className="media-caption"><Bi value={media.label} /></div>
       )}
     </div>
   );
@@ -147,6 +192,16 @@ function Project({ p, index }) {
           {p.tags.map((t) => <span className="tag" key={t}>{t}</span>)}
         </div>
 
+        {p.links && p.links.length > 0 && (
+          <div className="proj-links">
+            {p.links.map((link) => (
+              <a href={link.href} key={link.href} target="_blank" rel="noopener">
+                {link.label} <span aria-hidden="true">↗</span>
+              </a>
+            ))}
+          </div>
+        )}
+
         <div className="proj-more" aria-hidden={!open}>
           <div>
             <div className="proj-more-inner">
@@ -174,6 +229,33 @@ function Project({ p, index }) {
   );
 }
 
+function SideProjectCard({ p }) {
+  const Tag = p.href ? "a" : "article";
+  const linkProps = p.href ? { href: p.href, target: "_blank", rel: "noopener" } : {};
+  return (
+    <Tag className={`side-card ${p.blurb ? "" : "side-card-quiet"}`} {...linkProps}>
+      <div className="side-card-media">
+        {p.type === "video" ? (
+          <video src={p.src} aria-label={p.alt} autoPlay muted loop playsInline preload="metadata"></video>
+        ) : (
+          <img src={p.src} alt={p.alt || ""} loading="lazy" />
+        )}
+      </div>
+      <div className="side-card-body">
+        <p className="side-card-cat"><Bi value={p.cat} /></p>
+        <h3><Bi value={p.title} /></h3>
+        {p.blurb && <p className="side-card-blurb"><Bi value={p.blurb} /></p>}
+        {(p.meta || p.cta) && (
+          <div className="side-card-foot">
+            <span><Bi value={p.meta} /></span>
+            {p.cta && <strong><Bi value={p.cta} /> ↗</strong>}
+          </div>
+        )}
+      </div>
+    </Tag>
+  );
+}
+
 /* Section header */
 function SectionHead({ kicker, heading, sub }) {
   return (
@@ -185,4 +267,4 @@ function SectionHead({ kicker, heading, sub }) {
   );
 }
 
-Object.assign(window, { Bi, Reveal, MediaSlot, Project, SectionHead });
+Object.assign(window, { Bi, Reveal, MediaSlot, Project, SideProjectCard, SectionHead });

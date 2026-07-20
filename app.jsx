@@ -46,7 +46,7 @@ function App() {
       <Header lang={lang} onToggle={() => setLang((l) => (l === "zh" ? "en" : "zh"))} />
       <main>
         <Hero profile={S.profile} accent={t.accent} motion={t.motion} />
-        <Work data={S.projects} />
+        <Work data={S.projects} sideProjects={S.sideProjects} />
         <Research data={S.research} />
         <Publications data={S.publications} />
         <About data={S.about} />

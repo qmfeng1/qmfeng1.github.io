@@ -9,7 +9,7 @@ function Header({ lang, onToggle }) {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
   const nav = [
-    { href: "#work", en: "Work", zh: "项目" },
+    { href: "#work", en: "Projects", zh: "项目" },
     { href: "#research", en: "Research", zh: "研究" },
     { href: "#publications", en: "Publications", zh: "论文" },
     { href: "#about", en: "About", zh: "简介" },
@@ -70,10 +70,6 @@ function Hero({ profile, accent, motion }) {
         </Reveal>
       </div>
 
-      <div className="hero-scroll"><span className="line"></span>
-        <span className="en">scroll</span><span className="zh">向下滚动</span>
-      </div>
-
       <div className="hero-stats">
         <dl className="wrap">
           {profile.stats.map((s, i) => (
@@ -88,7 +84,57 @@ function Hero({ profile, accent, motion }) {
   );
 }
 
-function Work({ data }) {
+function SideProjects({ data }) {
+  const trackRef = React.useRef(null);
+  const [atStart, setAtStart] = React.useState(true);
+  const [atEnd, setAtEnd] = React.useState(false);
+
+  const updatePosition = () => {
+    const track = trackRef.current;
+    if (!track) return;
+    setAtStart(track.scrollLeft < 8);
+    setAtEnd(track.scrollLeft + track.clientWidth >= track.scrollWidth - 8);
+  };
+
+  React.useEffect(() => {
+    updatePosition();
+    window.addEventListener("resize", updatePosition);
+    return () => window.removeEventListener("resize", updatePosition);
+  }, []);
+
+  const move = (direction) => {
+    const track = trackRef.current;
+    if (!track) return;
+    const card = track.querySelector(".side-card");
+    const gap = parseFloat(getComputedStyle(track).columnGap) || 24;
+    const amount = card ? card.getBoundingClientRect().width + gap : track.clientWidth;
+    track.scrollBy({ left: direction * amount, behavior: "smooth" });
+  };
+
+  return (
+    <Reveal className="side-projects">
+      <div className="side-projects-head">
+        <div>
+          <div className="proj-index">
+            <span>06</span>
+            <span className="tag-cat"><span className="en">Independent & applied</span><span className="zh">独立与应用项目</span></span>
+          </div>
+          <h2><Bi value={data.heading} /></h2>
+          <p><Bi value={data.sub} /></p>
+        </div>
+        <div className="side-controls" aria-label="Side project navigation">
+          <button type="button" onClick={() => move(-1)} disabled={atStart} aria-label="Previous side project">←</button>
+          <button type="button" onClick={() => move(1)} disabled={atEnd} aria-label="Next side project">→</button>
+        </div>
+      </div>
+      <div className="side-track" ref={trackRef} onScroll={updatePosition}>
+        {data.items.map((p) => <SideProjectCard p={p} key={p.id} />)}
+      </div>
+    </Reveal>
+  );
+}
+
+function Work({ data, sideProjects }) {
   return (
     <section className="section" id="work">
       <div className="wrap">
@@ -96,6 +142,7 @@ function Work({ data }) {
         <div className="proj-list">
           {data.items.map((p, i) => <Project key={p.id} p={p} index={i} />)}
         </div>
+        <SideProjects data={sideProjects} />
       </div>
     </section>
   );
@@ -161,8 +208,7 @@ function About({ data }) {
         <Reveal>
           <p className="kicker"><span className="en">About</span><span className="zh">简介</span></p>
           <h2 className="display" style={{ fontSize: "clamp(2rem,4vw,3.2rem)" }}>
-            <span className="en">Across hardware, fluids, and intelligence.</span>
-            <span className="zh">连接硬件、流体与智能。</span>
+            <Bi value={data.heading} />
           </h2>
         </Reveal>
         <Reveal className="about-copy" delay={0.08}>
@@ -211,12 +257,12 @@ function Footer() {
       <div className="wrap">
         <a className="brand" href="#top"><span className="dot"></span>Qimin Feng</a>
         <span className="footer-meta">
-          <span className="en">Bio-inspired robotics · flow-aware autonomy · © 2026</span>
-          <span className="zh">仿生机器人 · 流场感知自主系统 · © 2026</span>
+          <span className="en">Robotics · embedded control · flow sensing · © 2026</span>
+          <span className="zh">机器人 · 嵌入式控制 · 流场感知 · © 2026</span>
         </span>
       </div>
     </footer>
   );
 }
 
-Object.assign(window, { Header, Hero, Work, Research, Publications, About, Contact, Footer });
+Object.assign(window, { Header, Hero, SideProjects, Work, Research, Publications, About, Contact, Footer });
