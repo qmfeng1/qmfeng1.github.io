@@ -13,7 +13,7 @@ const SITE = {
     },
     headline: {
       en: ["I build robots that ", "move, sense, and learn", " in water."],
-      zh: ["创造能在水中", "运动、感知与学习", "的机器人。"],
+      zh: ["创造能在水中", "运动、感知与学习", "的机器人"],
     },
     text: {
       en: "I build end-to-end robotic systems across mechanism design, embedded control, multisensor perception, system integration, and underwater validation — turning concepts into controllable, measurable, experimentally verified hardware.",
@@ -267,8 +267,8 @@ const SITE = {
   sideProjects: {
     heading: { en: "Side projects", zh: "Side Projects" },
     sub: {
-      en: "Independent products and applied systems. Three are shown first; use the arrow to reveal the collaboration project on the right.",
-      zh: "独立产品与应用系统。默认并列展示前三个，点击右箭头查看更多。",
+      en: "Independent products and applied systems. use the arrow to reveal the collaboration project on the right.",
+      zh: "独立产品与应用系统。点击右箭头查看更多。",
     },
     items: [
       {
@@ -328,7 +328,7 @@ const SITE = {
   },
 
   publications: {
-    heading: { en: "Publications & manuscripts", zh: "论文与手稿" },
+    heading: { en: "Publications & manuscripts", zh: "论文" },
     items: [
       {
         title: { en: "Passive Phase-Oriented Impedance Shaping for Rapid Acceleration in Soft Robotic Swimmers", zh: "面向软体游动机器人快速加速的被动相位阻抗调制" },
@@ -360,7 +360,7 @@ const SITE = {
   contact: {
     heading: {
       en: "Let's build reliable robotic systems for difficult environments.",
-      zh: "一起为复杂环境打造可靠、可验证的机器人系统。",
+      zh: "迫不及待去研究更复杂的机器人了！",
     },
     links: [
       { label: "Email", meta: "qmfeng11@iastate.edu", href: "mailto:qmfeng11@iastate.edu" },
