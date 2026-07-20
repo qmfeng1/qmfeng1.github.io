@@ -3,80 +3,84 @@
 const SITE = {
   profile: {
     name: "Qimin Feng",
+    cv: {
+      en: "assets/Qimin_Feng_Robotics_Resume_EN.pdf",
+      zh: "assets/Qimin_Feng_Robotics_Resume_ZH.pdf",
+    },
     role: {
-      en: "Robotics Ph.D. Candidate · Iowa State University",
-      zh: "爱荷华州立大学机器人方向机械工程博士候选人",
+      en: "Mechanical Engineering Ph.D. Candidate · Iowa State University",
+      zh: "爱荷华州立大学机械工程博士候选人",
     },
     headline: {
       en: ["I build robots that ", "move, sense, and learn", " in water."],
-      zh: ["我构建能在水中", "运动、感知与学习", "的机器人。"],
+      zh: ["创造能在水中", "运动、感知与学习", "的机器人。"],
     },
     text: {
-      en: "My work connects embedded control, mechatronics, experimental hydrodynamics, and data-driven flow sensing — from calibrated hardware and safety logic to water-channel validation.",
-      zh: "我的工作连接嵌入式控制、机电系统、实验水动力学与数据驱动流场感知——从硬件标定和安全逻辑，一直到水槽实验验证。",
+      en: "I build end-to-end robotic systems across mechanism design, embedded control, multisensor perception, system integration, and underwater validation — turning concepts into controllable, measurable, experimentally verified hardware.",
+      zh: "贯通机构设计、嵌入式控制、多传感器感知、整机集成与水下验证，将概念推进为可控、可测、可验证的实物机器人系统。",
     },
     stats: [
       { k: { en: "Robotics experience", zh: "机器人研发经验" }, v: "5+ yrs" },
       { k: { en: "Major projects", zh: "参与大型项目" }, v: "4+" },
-      { k: { en: "Ph.D. expected", zh: "博士预计毕业" }, v: "Dec. 2027" },
+      { k: { en: "Ph.D. expected", zh: "博士毕业年限" }, v: "Dec. 2027" },
     ],
   },
 
   about: {
     heading: {
-      en: "Across hardware, fluids, and intelligent systems.",
-      zh: "连接硬件、流体与智能系统。",
+      en: "From mechanism design to verified robotic systems.",
+      zh: "从最初设计到可实验验证的机器人系统。",
     },
     p: {
       en: [
-        "I am a Mechanical Engineering Ph.D. candidate in the Zhong Lab at Iowa State University, advised by Prof. Qiang Zhong. I develop bio-inspired underwater robots, embedded control systems, soft robotic actuators, and flow-sensing methods for aquatic autonomy.",
-        "I work best on systems that cross disciplinary boundaries: calibrating a magnetic encoder, writing real-time control and safety logic, synchronizing sensors with PIV, and then using the resulting data to understand or reconstruct the flow. I am interested in robotics R&D roles spanning controls, perception, and experimental systems.",
+        "I am a Mechanical Engineering Ph.D. candidate in the Zhong Lab at Iowa State University, advised by Prof. Qiang Zhong. My research focuses on bio-inspired underwater and soft robotics, spanning robot architecture, mechanisms and actuators, embedded control, multimodal perception, and hydrodynamic validation.",
+        "I work across the full hardware lifecycle: designing mechanisms and experimental fixtures, integrating motors and sensors, building multirate control and safety systems, synchronizing pressure measurements with PIV, and using learning-based models to reconstruct flow fields. I am pursuing robotics R&D roles in embedded control, multisensor perception, and mechatronic systems integration.",
       ],
       zh: [
-        "我是爱荷华州立大学机械工程博士候选人，在 Zhong Lab 师从 Qiang Zhong 教授。我的研究聚焦仿生水下机器人、嵌入式控制、软体机器人驱动，以及面向水下自主系统的流场感知。",
-        "我擅长需要跨越多学科边界的系统：标定磁编码器、编写实时控制与安全逻辑、同步压力传感器与 PIV，再利用实验数据理解或重建流场。我正在关注控制、感知与实验系统方向的机器人研发岗位。",
+        "我是爱荷华州立大学机械工程博士候选人，在 Zhong Lab 师从钟强教授。研究聚焦水下仿生与软体机器人，工作覆盖机器人总体方案、本体与执行器、嵌入式控制、多模态感知及水动力实验验证。",
+        "我能够贯通实物系统的完整研发链路：设计机构与实验工装，集成电机和传感器，构建多频率控制与安全机制，同步压力测量与 PIV，并利用学习模型重建流场。当前求职方向为嵌入式控制、多传感器感知与机电系统集成方向的机器人研发岗位。",
       ],
     },
     facts: [
       { k: { en: "Current", zh: "当前" }, v: { en: "Ph.D. Candidate, Mechanical Engineering · Iowa State University", zh: "爱荷华州立大学 · 机械工程博士候选人" } },
-      { k: { en: "Lab / Advisor", zh: "实验室 / 导师" }, v: { en: "Zhong Lab · Prof. Qiang Zhong", zh: "Zhong Lab · Qiang Zhong 教授" } },
-      { k: { en: "Undergraduate", zh: "本科" }, v: { en: "B.S., Agricultural & Biosystems Engineering · Zhejiang University, 2022", zh: "浙江大学 · 农业工程学士，2022" } },
-      { k: { en: "Research focus", zh: "研究方向" }, v: { en: "Underwater robotics · embedded control · flow sensing", zh: "水下机器人 · 嵌入式控制 · 流场感知" } },
+      { k: { en: "Lab / Advisor", zh: "实验室 / 导师" }, v: { en: "Zhong Lab · Prof. Qiang Zhong", zh: "Zhong Lab · 钟强 教授" } },
+      { k: { en: "Undergraduate", zh: "本科" }, v: { en: "B.Eng., Agricultural and Biological Systems Engineering · Zhejiang University, 2022", zh: "浙江大学 · 农业与生物系统工程学士，2022" } },
+      { k: { en: "Research focus", zh: "研究方向" }, v: { en: "Bio-inspired & soft robotics · control · multimodal perception", zh: "水下仿生与软体机器人 · 控制 · 多模态感知" } },
       { k: { en: "Expected graduation", zh: "预计毕业" }, v: { en: "December 2027", zh: "2027 年 12 月" } },
     ],
   },
 
   research: {
-    heading: { en: "One loop from mechanism to autonomy", zh: "从机构到自主系统的一条闭环" },
+    heading: { en: "Building robotic systems from mechanisms to perception", zh: "从机构、控制到感知的机器人系统" },
     sub: {
-      en: "I build the mechanism, make its sensing and control dependable, and use experiments and models to understand the surrounding flow.",
-      zh: "我构建机构，让感知与控制可靠运行，再通过实验和模型理解机器人周围的流动。",
+      en: "My work connects physical design, dependable control, synchronized sensing, and experimental validation in one end-to-end development loop.",
+      zh: "我的工作把本体设计、可靠控制、同步感知与实验验证连接成一条完整研发链路。",
     },
     items: [
       {
         num: "01",
         title: { en: "Integrated underwater robot systems", zh: "水下机器人整机系统" },
         text: {
-          en: "MARIS brings actuation, sensing, stereo perception, operator control, telemetry, recording, and layered safety into one field-ready platform.",
-          zh: "MARIS 将驱动、传感、双目感知、操作界面、遥测、记录与多层安全机制集成为可下水验证的平台。",
+          en: "MARIS integrates actuation, sensing, stereo perception, operator control, state feedback, recording, and layered safety into one underwater-tested platform.",
+          zh: "MARIS 将驱动、传感、双目感知、操作界面、状态回传、数据记录与多层安全机制集成为完成水下验证的整机平台。",
         },
         foot: { en: "Hardware · Firmware · Perception", zh: "硬件 · 固件 · 感知" },
       },
       {
         num: "02",
-        title: { en: "Actuation, control, and material intelligence", zh: "驱动、控制与材料智能" },
+        title: { en: "Actuation, control, and passive mechanics", zh: "驱动、控制与被动力学" },
         text: {
           en: "Closed-loop voice-coil control provides precise active actuation; constrained-layer damping shapes a swimmer's impedance passively at the material level.",
           zh: "闭环音圈控制提供精确主动驱动；约束层阻尼则从材料层面被动调节游动机器人的阻抗。",
         },
-        foot: { en: "PID · Calibration · CLD", zh: "PID · 标定 · CLD" },
+        foot: { en: "PID · Experiment · CLD", zh: "PID · 实验 · CLD" },
       },
       {
         num: "03",
         title: { en: "Flow sensing and experimental hydrodynamics", zh: "流场感知与实验水动力学" },
         text: {
-          en: "Synchronized pressure sensing, PIV, force measurement, reduced-order models, and learning-based reconstruction connect local measurements to full flow structure.",
-          zh: "同步压力测量、PIV、力测量、降阶模型与学习重建，把局部测量连接到完整流场结构。",
+          en: "Synchronized pressure sensing, PIV, force measurement, and learning-based reconstruction connect sparse local measurements to full flow structure.",
+          zh: "同步压力测量、PIV、力测量与学习重建，把稀疏局部测量连接到完整流场结构。",
         },
         foot: { en: "PIV · Sensor fusion · ML", zh: "PIV · 传感融合 · 机器学习" },
       },
@@ -86,14 +90,14 @@ const SITE = {
   projects: {
     heading: { en: "Selected work", zh: "代表项目" },
     sub: {
-      en: "Four robotics systems first, followed by my submitted JFM study in experimental hydrodynamics. Each project is grounded in the supplied build notes, paper, and résumé.",
-      zh: "优先展示四个机器人系统，随后是已投稿 JFM 的实验水动力学研究。所有描述均以项目材料、论文和简历为依据。",
+      en: "Four robotics systems first, followed by my research in experimental hydrodynamics. Each project is grounded in the supplied build notes, papers, and résumé.",
+      zh: "我的研究展示——构建了四个机器人系统，实验水动力学研究，以及一些个人项目",
     },
     items: [
       {
         id: "maris",
         cat: { en: "Underwater robotics · Control & perception", zh: "水下机器人 · 控制与感知" },
-        title: { en: "MARIS — Manta-Ray Underwater Robot", zh: "MARIS — 蝠鲼仿生水下机器人" },
+        title: { en: "MARIS — Manta-Ray Underwater Robot", zh: "MARIS — 仿生蝠鲼水下机器人" },
         blurb: {
           en: "An end-to-end distributed robotics stack integrating 10+ actuation, sensing, perception, communication, and safety subsystems, with real-time Steam Deck control for underwater experiments.",
           zh: "一套端到端分布式机器人系统，集成 10+ 个驱动、传感、感知、通信与安全子系统，并通过 Steam Deck 对水下实验进行实时控制。",
@@ -102,7 +106,7 @@ const SITE = {
           { v: "7 Hz", k: { en: "wing flapping", zh: "机翼扑动频率" } },
           { v: "10+", k: { en: "integrated subsystems", zh: "集成子系统" } },
         ],
-        tags: ["Raspberry Pi 5", "CAN", "PySide6/QML", "OpenCV", "Safety"],
+        tags: ["Raspberry Pi 5", "MIT Motor", "Multi-sensor", "Steam Deck"],
         media: {
           ratio: "16 / 10",
           label: { en: "MARIS free-swimming tests", zh: "MARIS 自由游动测试" },
@@ -113,12 +117,12 @@ const SITE = {
         },
         more: {
           en: [
-            "Integrated 10+ onboard subsystems, including dual wing motors, fin servos, IMU, pressure/depth sensing, stereo cameras, lighting, telemetry, experiment recording, networking, and safety supervision.",
+            "Integrated 10+ onboard subsystems, including dual wing motors, fin servos, IMU, pressure/depth sensing, stereo cameras, lighting, state feedback, experiment recording, networking, and safety supervision.",
             "Built a Steam Deck operator interface for real-time motion control, live vehicle-state monitoring, parameter adjustment, and emergency-stop handling.",
             "Validated the complete system in free-swimming trials and underwater experiments at depths up to 3 m.",
           ],
           zh: [
-            "集成 10+ 个板载子系统，包括双翼电机、鳍舵机、IMU、压力/深度传感、双目相机、灯光、遥测、实验记录、网络通信与安全监控。",
+            "集成 10+ 个板载子系统，包括双翼电机、鳍舵机、IMU、压力/深度传感、双目相机、灯光、状态回传、实验记录、网络通信与安全监控。",
             "开发 Steam Deck 操作界面，实现运动实时控制、机器人状态监测、参数调节与紧急停止。",
             "在自由游动测试和最深 3 m 的水下环境中完成整套系统实验验证。",
           ],
@@ -129,14 +133,14 @@ const SITE = {
         cat: { en: "Modular robotics · Embedded control", zh: "模块化机器人 · 嵌入式控制" },
         title: { en: "VCA Modular Bot", zh: "VCA 模块化机器人" },
         blurb: {
-          en: "A dual-ESP32-C6 modular actuation system combining open-loop force control with 500 Hz closed-loop angle control, plus ESP-NOW commands, telemetry, a browser interface, and layered safety interlocks.",
-          zh: "双 ESP32-C6 模块化驱动系统：结合开环力控制与 500 Hz 闭环角度控制，并集成 ESP-NOW 指令、遥测、浏览器界面和多层安全保护。",
+          en: "A dual-ESP32-C6 modular actuation system combining open-loop force adjustment with 500 Hz closed-loop angle control, acknowledged ESP-NOW communication, a browser interface, and layered safety interlocks.",
+          zh: "双 ESP32-C6 模块化驱动系统：结合开环输出力调节与 500 Hz 闭环角度控制，并集成带确认机制的 ESP-NOW 通信、浏览器界面和多层安全保护。",
         },
         metrics: [
           { v: ">30 W", k: { en: "peak power", zh: "峰值功率" } },
           { v: "Linear", k: { en: "force response", zh: "力响应" } },
         ],
-        tags: ["ESP32-C6", "PI control", "AS5600L", "ESP-NOW", "FreeRTOS"],
+        tags: ["ESP32-C6", "VCA", "Magnet", "PID", "Multi-joint"],
         media: {
           ratio: "16 / 10",
           label: { en: "Closed-loop VCA bench", zh: "VCA 闭环控制台架" },
@@ -147,13 +151,13 @@ const SITE = {
         },
         more: {
           en: [
-            "Built a Commander/Driver dual-ESP32-C6 architecture with 500 Hz PI control, 50 Hz telemetry, message acknowledgements, receive queues, and a browser-based control interface.",
-            "Implemented two control modes: open-loop PWM produces a linear force response and directly controls force magnitude, while closed-loop control regulates joint angle.",
+            "Built a Commander/Driver dual-ESP32-C6 architecture with local sensing and actuation on the Driver, plus acknowledged ESP-NOW commands, queued reception, state feedback, and a browser-based interface through the Commander.",
+            "Implemented open-loop force adjustment and 500 Hz PID angle control: PWM commands produced a linear force response, while closed-loop control regulated the joint over ±45°.",
             "Validated the current single-module system and designed the architecture to expand into a multi-module robot.",
           ],
           zh: [
-            "构建 Commander / Driver 双 ESP32-C6 架构，实现 500 Hz PI 控制、50 Hz 遥测、消息确认、接收队列及浏览器控制界面。",
-            "实现两种控制模式：开环 PWM 输出与力呈线性响应，可直接控制力的大小；闭环控制则实现关节角度调节。",
+            "构建 Commander / Driver 双 ESP32-C6 架构，由 Driver 负责本地传感与执行器驱动，Commander 通过 ESP-NOW 完成指令转发与状态回传；加入消息确认、接收队列与浏览器控制界面。",
+            "实现开环输出力调节与 500 Hz PID 闭环角度控制：PWM 指令与输出力呈线性关系，闭环控制支持 ±45° 关节角度调节。",
             "目前完成单模块系统验证，并将整体架构设计为未来可拓展到多模块机器人。",
           ],
         },
@@ -170,7 +174,7 @@ const SITE = {
           { v: "≈5×", k: { en: "peak acceleration", zh: "峰值加速度" } },
           { v: ">200%", k: { en: "thrust increase", zh: "推力提升" } },
         ],
-        tags: ["CLD", "PIV", "Impedance", "MuJoCo", "RL"],
+        tags: ["CLD", "PIV", "Impedance", "Experimental design", "Soft robotics"],
         media: {
           ratio: "16 / 10",
           label: { en: "CLD swimmer acceleration test", zh: "CLD 游动机器人加速测试" },
@@ -181,14 +185,14 @@ const SITE = {
         links: [{ label: "arXiv", href: "https://arxiv.org/abs/2603.03537" }],
         more: {
           en: [
-            "Characterized complex bending impedance over 0–5 Hz using dry bender tests, torque sensing, and lock-in harmonic regression.",
+            "Built an air-to-water validation workflow: 1–5 Hz bending tests in air for complex impedance, followed by water-tunnel propulsion tests at St = 0.2–0.8 with thrust measurement and phase-resolved PIV.",
             "At St = 0.8, the 66.7% CLD design produced 0.51 N thrust versus 0.16 N for the baseline and reached 0.291 m/s terminal velocity.",
-            "Extended the work toward a MuJoCo/Gymnasium RL framework with frequency and amplitude as a compact two-parameter action space.",
+            "Used virtual-mass trials to validate free-swimming acceleration, including an approximately fivefold increase in peak acceleration over the baseline.",
           ],
           zh: [
-            "通过干态弯曲测试、扭矩测量与锁相谐波回归，表征 0–5 Hz 范围内的复弯曲阻抗。",
+            "搭建从空气结构测试到水下推进验证的完整流程：在空气中开展 1–5 Hz 弯曲测试并表征复阻抗，再在水洞中完成 St = 0.2–0.8 推进实验、推力测量与相位分辨 PIV。",
             "在 St = 0.8 时，66.7% CLD 方案产生 0.51 N 推力，基线为 0.16 N；终端速度达到 0.291 m/s。",
-            "进一步设计 MuJoCo/Gymnasium 强化学习框架，以频率与振幅构成紧凑的二维动作空间。",
+            "通过虚拟质量方法验证自由游动加速性能，峰值加速度较基线提升约 5 倍。",
           ],
         },
       },
@@ -204,7 +208,7 @@ const SITE = {
           { v: "Synchronized", k: { en: "pressure + flow field", zh: "压力 + 流场" } },
           { v: "54 cases", k: { en: "experimental dataset", zh: "实验数据集" } },
         ],
-        tags: ["Teensy", "I²C", "TTL", "PIV", "PyTorch"],
+        tags: ["Teensy", "PIV", "Synchronized","PyTorch","Sparse-sensing" ],
         media: {
           type: "diagram",
           ratio: "16 / 10",
@@ -225,7 +229,7 @@ const SITE = {
       },
       {
         id: "jfm-heaving-foil",
-        cat: { en: "JFM submission · Experimental hydrodynamics", zh: "JFM 投稿 · 实验水动力学" },
+        cat: { en: "JFM manuscript · Experimental hydrodynamics", zh: "JFM 在审 · 实验水动力学" },
         title: { en: "Lift Reversal near a Free Surface", zh: "近自由表面振荡翼的升力反转" },
         blurb: {
           en: "Force measurements, PIV, and potential-flow simulations show how phase-shifted free-surface motion changes trailing-edge vortex pairing and reverses the mean vertical force on a heaving foil.",
@@ -235,7 +239,7 @@ const SITE = {
           { v: "840", k: { en: "experimental conditions", zh: "实验工况" } },
           { v: "PIV + force", k: { en: "validation", zh: "实验验证" } },
         ],
-        tags: ["Free surface", "Heaving foil", "PIV", "Potential flow"],
+        tags: ["Free surface", "Hydrofoil", "PIV", "Potential flow"],
         media: {
           ratio: "4 / 3",
           label: { en: "Free-surface PIV experiment", zh: "自由表面 PIV 实验" },
@@ -248,12 +252,12 @@ const SITE = {
           en: [
             "Found a systematic transition from repulsion to suction as the unsteady number increases at moderate-to-deep submergence.",
             "Linked the narrow reversal band to surface-induced vertical advection, changed trailing-edge vortex pairing, and redirected wake momentum flux.",
-            "Decomposed the force into coordinated changes in quasi-steady pressure loading and wake-induced force; submitted to Journal of Fluid Mechanics.",
+            "Decomposed the force into coordinated changes in quasi-steady pressure loading and wake-induced force; the manuscript is under review at Journal of Fluid Mechanics.",
           ],
           zh: [
             "在中等至较深浸没深度下，发现平均升力随非定常数增加由排斥系统性转为吸引。",
             "将狭窄反转区间与表面诱导垂向平流、尾缘涡配对变化及尾迹动量通量重定向联系起来。",
-            "将反转分解为准定常压力载荷与尾迹诱导力的协同变化；论文已投稿 Journal of Fluid Mechanics。",
+            "将反转分解为准定常压力载荷与尾迹诱导力的协同变化；论文目前在 Journal of Fluid Mechanics 审稿中。",
           ],
         },
       },
@@ -264,7 +268,7 @@ const SITE = {
     heading: { en: "Side projects", zh: "Side Projects" },
     sub: {
       en: "Independent products and applied systems. Three are shown first; use the arrow to reveal the collaboration project on the right.",
-      zh: "独立产品与应用系统。默认并列展示前三个，点击右箭头查看右侧的合作项目。",
+      zh: "独立产品与应用系统。默认并列展示前三个，点击右箭头查看更多。",
     },
     items: [
       {
@@ -288,9 +292,9 @@ const SITE = {
         title: "ClearCoach",
         blurb: {
           en: "A responsive AI badminton coach that turns a stroke video into phase-level analysis, technique diagnosis, professional-reference comparison, and focused training recommendations.",
-          zh: "响应式 AI 羽毛球教练：把击球视频转化为分阶段分析、技术诊断、职业选手对比与针对性训练建议。",
+          zh: "AI 羽毛球教练：把击球视频转化为分阶段分析、技术诊断、职业选手对比与针对性训练建议。",
         },
-        meta: { en: "OpenCV · Multimodal LLM · 72 tests", zh: "OpenCV · 多模态大模型 · 72 项测试" },
+        meta: { en: "OpenCV · Multimodal LLM", zh: "OpenCV · 多模态大模型" },
         src: "assets/media/clearcoach.png",
         type: "image",
         alt: "ClearCoach landing page",
@@ -329,40 +333,48 @@ const SITE = {
       {
         title: { en: "Passive Phase-Oriented Impedance Shaping for Rapid Acceleration in Soft Robotic Swimmers", zh: "面向软体游动机器人快速加速的被动相位阻抗调制" },
         authors: ["Qimin Feng", "Orion A. Roberts", "Qiang Zhong"],
-        venue: { en: "arXiv:2603.03537 · Submitted to IROS 2026", zh: "arXiv:2603.03537 · 投稿 IROS 2026" },
+        venue: { en: "IROS 2026 · Accepted · First author", zh: "IROS 2026 · 已接收 · 第一作者" },
         links: [{ label: "arXiv", href: "https://arxiv.org/abs/2603.03537" }],
       },
       {
-        title: { en: "Lift reversal from vortex-surface phase coupling in a heaving foil near a free surface", zh: "近自由表面振荡翼中由涡–表面相位耦合引起的升力反转" },
+        title: { en: "Lift Reversal from Vortex-Surface Phase Coupling in a Heaving Foil near a Free Surface", zh: "近自由表面振荡翼中由涡–表面相位耦合引起的升力反转" },
         authors: ["Qimin Feng", "Tianjun Han", "Qiang Zhong"],
-        venue: { en: "arXiv:2512.12485 · 2025 · Submitted to Journal of Fluid Mechanics", zh: "arXiv:2512.12485 · 2025 · 投稿 Journal of Fluid Mechanics" },
+        venue: { en: "Journal of Fluid Mechanics · Under review · First author", zh: "Journal of Fluid Mechanics · 在审 · 第一作者" },
         links: [{ label: "arXiv", href: "https://arxiv.org/abs/2512.12485" }],
       },
       {
-        title: { en: "Wavenumber affects the lift of ray-inspired fins near a substrate", zh: "波数影响近壁面鳐鱼仿生鳍的升力" },
-        authors: ["Yuanhang Zhu", "Leo Liu", "Tianjun Han", "Qimin Feng", "Keith W. Moored", "Qiang Zhong", "Daniel B. Quinn"],
-        venue: { en: "Journal of the Royal Society Interface · 22:20250276 · 2025", zh: "Journal of the Royal Society Interface · 22:20250276 · 2025" },
-        links: [{ label: "arXiv", href: "https://arxiv.org/abs/2504.00427" }, { label: "DOI", href: "https://doi.org/10.1098/rsif.2025.0276" }],
+        title: { en: "Inertial Effects on the Mechanical Efficiency of a Semi-Passive Oscillating Hydrofoil Energy Harvester", zh: "惯性效应对半被动振荡水翼能量采集器机械效率的影响" },
+        authors: ["Z. Zhang", "Qimin Feng", "Y. Zhu", "Qiang Zhong"],
+        venue: { en: "Renewable Energy · Under review · Second author", zh: "Renewable Energy · 在审 · 第二作者" },
+        links: [{ label: "arXiv", href: "https://arxiv.org/abs/2606.11126" }],
       },
       {
-        title: { en: "Mantabot Swimming Performance", zh: "Mantabot 游动性能" },
-        authors: ["Qimin Feng", "Qiang Zhong"],
-        venue: { en: "Manuscript in preparation", zh: "手稿撰写中" },
-        links: [],
+        title: { en: "Wavenumber Affects the Lift of Ray-Inspired Fins near a Substrate", zh: "波数影响近壁面鳐鱼仿生鳍的升力" },
+        authors: ["Yuanhang Zhu", "Leo Liu", "Tianjun Han", "Qimin Feng", "Keith W. Moored", "Qiang Zhong", "Daniel B. Quinn"],
+        venue: { en: "Journal of the Royal Society Interface · 22:20250276 · Published 2025", zh: "Journal of the Royal Society Interface · 22:20250276 · 2025 年发表" },
+        links: [{ label: "arXiv", href: "https://arxiv.org/abs/2504.00427" }, { label: "DOI", href: "https://doi.org/10.1098/rsif.2025.0276" }],
       },
     ],
   },
 
   contact: {
     heading: {
-      en: "Let's build reliable robots for difficult environments.",
-      zh: "一起为复杂环境构建可靠的机器人。",
+      en: "Let's build reliable robotic systems for difficult environments.",
+      zh: "一起为复杂环境打造可靠、可验证的机器人系统。",
     },
     links: [
       { label: "Email", meta: "qmfeng11@iastate.edu", href: "mailto:qmfeng11@iastate.edu" },
       { label: "GitHub", meta: { en: "Code & independent projects", zh: "代码与独立项目" }, href: "https://github.com/LeMat11" },
       { label: "Google Scholar", meta: { en: "Papers & citations", zh: "论文与引用" }, href: "https://scholar.google.com/citations?user=qiWJZaoAAAAJ&hl=en" },
-      { label: "CV (PDF)", meta: { en: "Download résumé", zh: "下载简历" }, href: "assets/Qimin_Feng_CV.pdf" },
+      {
+        label: "CV (PDF)",
+        meta: { en: "Download résumé", zh: "下载简历" },
+        href: {
+          en: "assets/Qimin_Feng_Robotics_Resume_EN.pdf",
+          zh: "assets/Qimin_Feng_Robotics_Resume_ZH.pdf",
+        },
+        download: true,
+      },
     ],
   },
 };

@@ -45,12 +45,12 @@ function App() {
     <React.Fragment>
       <Header lang={lang} onToggle={() => setLang((l) => (l === "zh" ? "en" : "zh"))} />
       <main>
-        <Hero profile={S.profile} accent={t.accent} motion={t.motion} />
+        <Hero profile={S.profile} lang={lang} accent={t.accent} motion={t.motion} />
         <Work data={S.projects} sideProjects={S.sideProjects} />
         <Research data={S.research} />
         <Publications data={S.publications} />
         <About data={S.about} />
-        <Contact data={S.contact} />
+        <Contact data={S.contact} lang={lang} />
       </main>
       <Footer />
 

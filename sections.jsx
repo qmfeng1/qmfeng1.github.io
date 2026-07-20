@@ -34,7 +34,7 @@ function Header({ lang, onToggle }) {
   );
 }
 
-function Hero({ profile, accent, motion }) {
+function Hero({ profile, lang, accent, motion }) {
   const FlowField = window.FlowField;
   const h = profile.headline;
   return (
@@ -55,7 +55,7 @@ function Hero({ profile, accent, motion }) {
               <span className="en">See the work</span><span className="zh">查看项目</span>
               <span className="btn-arrow">→</span>
             </a>
-            <a className="btn btn-ghost" href="assets/Qimin_Feng_CV.pdf">
+            <a className="btn btn-ghost" href={profile.cv[lang]} download>
               <span className="en">Download CV</span><span className="zh">下载简历</span>
             </a>
           </Reveal>
@@ -230,7 +230,7 @@ function About({ data }) {
   );
 }
 
-function Contact({ data }) {
+function Contact({ data, lang }) {
   return (
     <section className="section section-dark" id="contact">
       <div className="wrap contact-grid">
@@ -239,12 +239,15 @@ function Contact({ data }) {
           <h2 className="display"><Bi value={data.heading} /></h2>
         </Reveal>
         <Reveal className="contact-links" delay={0.08}>
-          {data.links.map((l) => (
-            <a className="contact-link" href={l.href} key={l.label} target={l.href.startsWith("http") ? "_blank" : undefined} rel="noopener">
-              <span>{l.label}</span>
-              <span className="meta"><Bi value={l.meta} /> <span className="arrow">↗</span></span>
-            </a>
-          ))}
+          {data.links.map((l) => {
+            const href = typeof l.href === "string" ? l.href : l.href[lang];
+            return (
+              <a className="contact-link" href={href} key={l.label} target={href.startsWith("http") ? "_blank" : undefined} rel="noopener" download={l.download || undefined}>
+                <span>{l.label}</span>
+                <span className="meta"><Bi value={l.meta} /> <span className="arrow">↗</span></span>
+              </a>
+            );
+          })}
         </Reveal>
       </div>
     </section>
@@ -257,8 +260,8 @@ function Footer() {
       <div className="wrap">
         <a className="brand" href="#top"><span className="dot"></span>Qimin Feng</a>
         <span className="footer-meta">
-          <span className="en">Robotics · embedded control · flow sensing · © 2026</span>
-          <span className="zh">机器人 · 嵌入式控制 · 流场感知 · © 2026</span>
+          <span className="en">Robotics · embedded control · multisensor perception · © 2026</span>
+          <span className="zh">机器人 · 嵌入式控制 · 多传感器感知 · © 2026</span>
         </span>
       </div>
     </footer>
