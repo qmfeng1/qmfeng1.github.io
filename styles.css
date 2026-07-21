@@ -357,7 +357,6 @@ img { max-width: 100%; display: block; }
   padding-top: clamp(20px, 4vw, 40px);
   border-top: 1px solid var(--line);
 }
-.proj:nth-child(even) .proj-media { order: 2; }
 .proj-index {
   font-family: var(--font-mono);
   font-size: 0.78rem; letter-spacing: 0.1em;
@@ -661,7 +660,6 @@ img { max-width: 100%; display: block; }
   .hero-inner { grid-template-columns: 1fr; gap: 36px; }
   .hero-portrait { max-width: 320px; }
   .proj { grid-template-columns: 1fr; }
-  .proj:nth-child(even) .proj-media { order: 0; }
   .proj-media { order: -1; }
   .theme-grid { grid-template-columns: 1fr; }
   .about-grid, .contact-grid { grid-template-columns: 1fr; }
