@@ -90,8 +90,8 @@ const SITE = {
   projects: {
     heading: { en: "Selected work", zh: "代表项目" },
     sub: {
-      en: "Four robotics systems first, followed by my research in experimental hydrodynamics. Each project is grounded in the supplied build notes, papers, and résumé.",
-      zh: "我的研究展示——构建了四个机器人系统，实验水动力学研究，以及一些个人项目",
+      en: "My Research Showcase: four robotics systems, followed by my research in experimental hydrodynamics, and some personal projects.",
+      zh: "我的研究展示——四个不同方向的机器人系统，实验水动力学研究，以及一些个人项目",
     },
     items: [
       {
@@ -106,13 +106,13 @@ const SITE = {
           { v: "7 Hz", k: { en: "wing flapping", zh: "机翼扑动频率" } },
           { v: "10+", k: { en: "integrated subsystems", zh: "集成子系统" } },
         ],
-        tags: ["Raspberry Pi 5", "MIT Motor", "Multi-sensor", "Steam Deck"],
+        tags: ["Raspberry Pi 5", "CAN/MIT Motor", "Multi-sensor", "Steam Deck"],
         media: {
           ratio: "16 / 10",
-          label: { en: "MARIS free-swimming tests", zh: "MARIS 自由游动测试" },
+          label: { en: "MARIS neutral buoyancy test", zh: "MARIS 中心浮力测试" },
           sources: [
-            { type: "video", src: "assets/media/maris-1.mp4", alt: "MARIS underwater robot during a free-swimming test" },
-            { type: "video", src: "assets/media/maris-2.mp4", alt: "Second MARIS underwater swimming experiment" },
+            { type: "video", src: "assets/media/maris-1.mp4", alt: "MARIS neutral buoyancy test" },
+            { type: "video", src: "assets/media/maris-2.mp4", alt: "MARIS neutral buoyancy test" },
           ],
         },
         more: {
@@ -199,7 +199,7 @@ const SITE = {
       {
         id: "flow-sensing",
         cat: { en: "Flow perception · Sensor fusion", zh: "流场感知 · 传感融合" },
-        title: { en: "Flow Perception", zh: "流场感知" },
+        title: { en: "PIV-pressure Synchronized Flow Perception & Recontruction", zh: "PIV-压力同步流场感知与重构" },
         blurb: {
           en: "A synchronized perception platform that pairs surface-pressure measurements with PIV flow fields, creating aligned multimodal experiments for learning-based full-field reconstruction.",
           zh: "同步流场感知平台：将表面压力测量与 PIV 流场配对，构建对齐的多模态实验数据，用于学习驱动的全场重建。",
@@ -210,9 +210,15 @@ const SITE = {
         ],
         tags: ["Teensy", "PIV", "Synchronized","PyTorch","Sparse-sensing" ],
         media: {
-          type: "diagram",
-          ratio: "16 / 10",
-          label: { en: "Synchronized acquisition architecture", zh: "同步采集架构" },
+          ratio: "720 / 418",
+          label: { en: "Synchronized pressure–PIV flow field", zh: "压力–PIV 同步流场" },
+          sources: [
+            {
+              type: "video",
+              src: "assets/media/flow-sensing.mp4",
+              alt: "Time-resolved vorticity field and velocity vectors used in the flow-perception dataset",
+            },
+          ],
         },
         more: {
           en: [
