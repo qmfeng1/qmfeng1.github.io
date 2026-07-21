@@ -239,13 +239,20 @@ function Contact({ data, lang }) {
           <h2 className="display"><Bi value={data.heading} /></h2>
         </Reveal>
         <Reveal className="contact-links" delay={0.08}>
-          {data.links.map((l) => {
-            const href = typeof l.href === "string" ? l.href : l.href[lang];
+          {data.links.filter((l) => !l.langs || l.langs.includes(lang)).map((l, i) => {
+            const href = !l.href ? null : typeof l.href === "string" ? l.href : l.href[lang];
+            const Tag = href ? "a" : "div";
+            const linkProps = href ? {
+              href,
+              target: href.startsWith("http") ? "_blank" : undefined,
+              rel: "noopener",
+              download: l.download || undefined,
+            } : {};
             return (
-              <a className="contact-link" href={href} key={l.label} target={href.startsWith("http") ? "_blank" : undefined} rel="noopener" download={l.download || undefined}>
-                <span>{l.label}</span>
-                <span className="meta"><Bi value={l.meta} /> <span className="arrow">↗</span></span>
-              </a>
+              <Tag className={`contact-link ${href ? "" : "contact-link-static"}`} key={l.id || `${l.label}-${i}`} {...linkProps}>
+                <span><Bi value={l.label} /></span>
+                <span className="meta"><Bi value={l.meta} /> {href && <span className="arrow">↗</span>}</span>
+              </Tag>
             );
           })}
         </Reveal>

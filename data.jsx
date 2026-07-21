@@ -109,7 +109,7 @@ const SITE = {
         tags: ["Raspberry Pi 5", "CAN/MIT Motor", "Multi-sensor", "Steam Deck"],
         media: {
           ratio: "16 / 10",
-          label: { en: "MARIS neutral buoyancy test", zh: "MARIS 中心浮力测试" },
+          label: { en: "MARIS neutral buoyancy test", zh: "MARIS 中性浮力测试" },
           sources: [
             { type: "video", src: "assets/media/maris-1.mp4", alt: "MARIS neutral buoyancy test" },
             { type: "video", src: "assets/media/maris-2.mp4", alt: "MARIS neutral buoyancy test" },
@@ -369,7 +369,25 @@ const SITE = {
       zh: "迫不及待去研究更复杂的机器人了！",
     },
     links: [
-      { label: "Email", meta: "qmfeng11@iastate.edu", href: "mailto:qmfeng11@iastate.edu" },
+      {
+        id: "isu-email",
+        label: "Iowa State Email",
+        meta: "qmfeng11@iastate.edu",
+        href: "mailto:qmfeng11@iastate.edu",
+        langs: ["en"],
+      },
+      {
+        id: "personal-email",
+        label: { en: "Personal Email", zh: "个人邮箱" },
+        meta: "qmfeng11@gmail.com",
+        href: "mailto:qmfeng11@gmail.com",
+      },
+      {
+        id: "wechat",
+        label: { en: "WeChat", zh: "微信" },
+        meta: "lemat11",
+        langs: ["zh"],
+      },
       { label: "GitHub", meta: { en: "Code & independent projects", zh: "代码与独立项目" }, href: "https://github.com/LeMat11" },
       { label: "Google Scholar", meta: { en: "Papers & citations", zh: "论文与引用" }, href: "https://scholar.google.com/citations?user=qiWJZaoAAAAJ&hl=en" },
       {
