@@ -426,6 +426,8 @@ img { max-width: 100%; display: block; }
   background: var(--deep);
   touch-action: pan-y;
   user-select: none;
+  isolation: isolate;
+  contain: paint;
   -webkit-tap-highlight-color: transparent;
 }
 .media-carousel video { pointer-events: none; }
@@ -459,6 +461,7 @@ img { max-width: 100%; display: block; }
   border: 1px solid rgba(255,255,255,0.22);
   border-radius: 100px;
   background: rgba(3,28,42,0.74);
+  -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
   color: var(--on-deep);
 }
@@ -480,7 +483,7 @@ img { max-width: 100%; display: block; }
   font: 0.62rem/1 var(--font-mono);
   letter-spacing: 0.04em;
 }
-.media-carousel-caption {
+.media-caption.media-carousel-caption {
   top: 12px; bottom: auto;
   max-width: calc(100% - 150px);
 }
@@ -491,6 +494,7 @@ img { max-width: 100%; display: block; }
   border: 1px solid rgba(255,255,255,0.18);
   border-radius: 100px;
   background: rgba(3,28,42,0.7);
+  -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
   color: var(--on-deep-muted);
   font: 0.61rem/1.2 var(--font-mono);
@@ -504,6 +508,7 @@ img { max-width: 100%; display: block; }
   border: 1px solid rgba(255,255,255,0.22);
   border-radius: 100px;
   background: rgba(3,28,42,0.7);
+  -webkit-backdrop-filter: blur(8px);
   backdrop-filter: blur(8px);
   color: var(--on-deep);
   font-family: var(--font-mono); font-size: 0.66rem; letter-spacing: 0.04em;
