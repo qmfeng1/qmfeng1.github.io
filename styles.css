@@ -420,6 +420,74 @@ img { max-width: 100%; display: block; }
 .media-slot img, .media-slot video { position: absolute; inset: 0; width: 100%; height: 100%; }
 .media-slot img { object-fit: cover; }
 .media-slot video { object-fit: contain; background: var(--deep); }
+.media-carousel {
+  position: absolute; inset: 0;
+  overflow: hidden;
+  background: var(--deep);
+}
+.media-carousel-track {
+  width: 100%; height: 100%;
+  display: flex;
+  overflow-x: auto; overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  overscroll-behavior-inline: contain;
+  scrollbar-width: none;
+  touch-action: pan-x pan-y;
+}
+.media-carousel-track::-webkit-scrollbar { display: none; }
+.media-carousel-track:focus-visible { outline: 2px solid var(--accent); outline-offset: -3px; }
+.media-carousel-slide {
+  position: relative;
+  flex: 0 0 100%;
+  min-width: 0;
+  scroll-snap-align: start;
+  scroll-snap-stop: always;
+  background: var(--deep);
+}
+.media-carousel-controls {
+  position: absolute; z-index: 5; top: 12px; right: 12px;
+  display: flex; align-items: center; gap: 6px;
+  padding: 4px;
+  border: 1px solid rgba(255,255,255,0.22);
+  border-radius: 100px;
+  background: rgba(3,28,42,0.74);
+  backdrop-filter: blur(8px);
+  color: var(--on-deep);
+}
+.media-carousel-controls button {
+  width: 30px; height: 30px;
+  display: grid; place-items: center;
+  border: 0; border-radius: 50%;
+  background: rgba(255,255,255,0.1);
+  color: inherit;
+  font: 0.86rem/1 var(--font-mono);
+  cursor: pointer;
+  transition: background .2s, opacity .2s;
+}
+.media-carousel-controls button:hover:not(:disabled) { background: var(--accent); }
+.media-carousel-controls button:disabled { opacity: 0.28; cursor: default; }
+.media-carousel-controls > span {
+  min-width: 38px;
+  text-align: center;
+  font: 0.62rem/1 var(--font-mono);
+  letter-spacing: 0.04em;
+}
+.media-carousel-caption {
+  top: 12px; bottom: auto;
+  max-width: calc(100% - 150px);
+}
+.media-swipe-hint {
+  position: absolute; z-index: 5; left: 12px; bottom: 12px;
+  padding: 6px 10px;
+  border: 1px solid rgba(255,255,255,0.18);
+  border-radius: 100px;
+  background: rgba(3,28,42,0.7);
+  backdrop-filter: blur(8px);
+  color: var(--on-deep-muted);
+  font: 0.61rem/1.2 var(--font-mono);
+  letter-spacing: 0.035em;
+  pointer-events: none;
+}
 .media-caption {
   position: absolute; z-index: 3; left: 12px; bottom: 12px;
   max-width: calc(100% - 24px);

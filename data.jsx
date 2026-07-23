@@ -113,6 +113,18 @@ const SITE = {
           sources: [
             { type: "video", src: "assets/media/maris-1.mp4", alt: "MARIS neutral buoyancy test" },
             { type: "video", src: "assets/media/maris-2.mp4", alt: "MARIS neutral buoyancy test" },
+            {
+              type: "video",
+              src: "assets/media/maris-flapping.mp4",
+              alt: "MARIS experimental wing-flapping motion test",
+              label: { en: "Experimental motion test", zh: "实验运动测试" },
+            },
+            {
+              type: "video",
+              src: "assets/media/maris-wide-depth.mp4",
+              alt: "Underwater view from the MARIS stereo vision system",
+              label: { en: "MARIS' dual-vision", zh: "MARIS 双目视觉" },
+            },
           ],
         },
         more: {

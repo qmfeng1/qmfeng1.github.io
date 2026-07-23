@@ -137,15 +137,115 @@ function MediaItem({ item }) {
   return <img src={item.src} alt={item.alt || ""} loading="lazy" />;
 }
 
-/* Project media supports a single asset, a two-up gallery, or the sensing diagram. */
+function CarouselMediaItem({ item, active }) {
+  const videoRef = React.useRef(null);
+
+  React.useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return;
+    if (active) {
+      const playPromise = video.play();
+      if (playPromise) playPromise.catch(() => {});
+    } else {
+      video.pause();
+    }
+  }, [active]);
+
+  if (item.type === "video") {
+    return (
+      <video
+        ref={videoRef}
+        src={item.src}
+        aria-label={item.alt || "Project video"}
+        autoPlay={active}
+        muted
+        loop
+        playsInline
+        preload={active ? "auto" : "metadata"}
+      ></video>
+    );
+  }
+  return <img src={item.src} alt={item.alt || ""} loading={active ? "eager" : "lazy"} />;
+}
+
+function MediaCarousel({ items, fallbackLabel }) {
+  const trackRef = React.useRef(null);
+  const [index, setIndex] = React.useState(0);
+
+  const goTo = (nextIndex) => {
+    const track = trackRef.current;
+    if (!track) return;
+    const bounded = Math.max(0, Math.min(items.length - 1, nextIndex));
+    track.scrollTo({ left: bounded * track.clientWidth, behavior: "smooth" });
+    setIndex(bounded);
+  };
+
+  const updateIndex = () => {
+    const track = trackRef.current;
+    if (!track || !track.clientWidth) return;
+    const nextIndex = Math.round(track.scrollLeft / track.clientWidth);
+    setIndex(Math.max(0, Math.min(items.length - 1, nextIndex)));
+  };
+
+  const onKeyDown = (event) => {
+    if (event.key === "ArrowLeft") {
+      event.preventDefault();
+      goTo(index - 1);
+    }
+    if (event.key === "ArrowRight") {
+      event.preventDefault();
+      goTo(index + 1);
+    }
+  };
+
+  return (
+    <div className="media-carousel">
+      <div
+        className="media-carousel-track"
+        ref={trackRef}
+        onScroll={updateIndex}
+        onKeyDown={onKeyDown}
+        tabIndex="0"
+        aria-label="MARIS project video gallery"
+      >
+        {items.map((item, i) => (
+          <div className="media-carousel-slide" key={`${item.src}-${i}`}>
+            <CarouselMediaItem item={item} active={i === index} />
+            <div className="media-caption media-carousel-caption">
+              <Bi value={item.label || fallbackLabel} />
+            </div>
+          </div>
+        ))}
+      </div>
+
+      <div className="media-carousel-controls">
+        <button type="button" onClick={() => goTo(index - 1)} disabled={index === 0} aria-label="Previous MARIS video">←</button>
+        <span aria-live="polite">{index + 1} / {items.length}</span>
+        <button type="button" onClick={() => goTo(index + 1)} disabled={index === items.length - 1} aria-label="Next MARIS video">→</button>
+      </div>
+
+      {index < items.length - 1 && (
+        <div className="media-swipe-hint">
+          <span className="en">More videos to the right · swipe horizontally</span>
+          <span className="zh">右侧还有视频 · 手机端左右滑动查看</span>
+        </div>
+      )}
+    </div>
+  );
+}
+
+/* Project media supports a single asset, a two-up gallery, a carousel, or the sensing diagram. */
 function MediaSlot({ media, src }) {
   const ratio = (media && media.ratio) || "4 / 3";
   const sources = (media && media.sources) || (src ? [{ type: media.type, src }] : []);
   const isDiagram = media && media.type === "diagram";
+  const isCarousel = sources.length > 2;
   return (
-    <div className={`media-slot ${sources.length > 1 ? "media-slot-duo" : ""} ${isDiagram ? "media-slot-diagram" : ""}`} style={{ "--slot-ratio": ratio }}>
+    <div className={`media-slot ${sources.length === 2 ? "media-slot-duo" : ""} ${isCarousel ? "media-slot-carousel" : ""} ${isDiagram ? "media-slot-diagram" : ""}`} style={{ "--slot-ratio": ratio }}>
       {isDiagram ? (
         <FlowSensingDiagram />
+      ) : isCarousel ? (
+        <MediaCarousel items={sources} fallbackLabel={media.label} />
       ) : sources.length ? (
         <div className="media-grid">
           {sources.map((item, i) => (
@@ -159,7 +259,7 @@ function MediaSlot({ media, src }) {
           <span className="mt"><Bi value={media.label} /></span>
         </div>
       )}
-      {media && media.label && (sources.length || isDiagram) && (
+      {!isCarousel && media && media.label && (sources.length || isDiagram) && (
         <div className="media-caption"><Bi value={media.label} /></div>
       )}
     </div>
