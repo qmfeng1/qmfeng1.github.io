@@ -111,8 +111,14 @@ const SITE = {
           ratio: "16 / 10",
           label: { en: "MARIS neutral buoyancy test", zh: "MARIS 中性浮力测试" },
           sources: [
-            { type: "video", src: "assets/media/maris-1.mp4", alt: "MARIS neutral buoyancy test" },
-            { type: "video", src: "assets/media/maris-2.mp4", alt: "MARIS neutral buoyancy test" },
+            {
+              type: "video-duo",
+              label: { en: "MARIS neutral buoyancy test", zh: "MARIS 中性浮力测试" },
+              sources: [
+                { type: "video", src: "assets/media/maris-1.mp4", alt: "MARIS neutral buoyancy test, first view" },
+                { type: "video", src: "assets/media/maris-2.mp4", alt: "MARIS neutral buoyancy test, second view" },
+              ],
+            },
             {
               type: "video",
               src: "assets/media/maris-flapping.mp4",

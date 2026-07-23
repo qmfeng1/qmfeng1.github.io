@@ -151,6 +151,18 @@ function CarouselMediaItem({ item, active }) {
     }
   }, [active]);
 
+  if (item.type === "video-duo") {
+    return (
+      <div className="media-carousel-duo">
+        {item.sources.map((source, i) => (
+          <div className="media-carousel-duo-item" key={`${source.src}-${i}`}>
+            <CarouselMediaItem item={source} active={active} />
+          </div>
+        ))}
+      </div>
+    );
+  }
+
   if (item.type === "video") {
     return (
       <video
@@ -169,22 +181,12 @@ function CarouselMediaItem({ item, active }) {
 }
 
 function MediaCarousel({ items, fallbackLabel }) {
-  const trackRef = React.useRef(null);
   const [index, setIndex] = React.useState(0);
+  const touchStartX = React.useRef(null);
 
   const goTo = (nextIndex) => {
-    const track = trackRef.current;
-    if (!track) return;
     const bounded = Math.max(0, Math.min(items.length - 1, nextIndex));
-    track.scrollTo({ left: bounded * track.clientWidth, behavior: "smooth" });
     setIndex(bounded);
-  };
-
-  const updateIndex = () => {
-    const track = trackRef.current;
-    if (!track || !track.clientWidth) return;
-    const nextIndex = Math.round(track.scrollLeft / track.clientWidth);
-    setIndex(Math.max(0, Math.min(items.length - 1, nextIndex)));
   };
 
   const onKeyDown = (event) => {
@@ -198,24 +200,35 @@ function MediaCarousel({ items, fallbackLabel }) {
     }
   };
 
+  const onTouchStart = (event) => {
+    touchStartX.current = event.touches[0]?.clientX ?? null;
+  };
+
+  const onTouchEnd = (event) => {
+    if (touchStartX.current == null) return;
+    const endX = event.changedTouches[0]?.clientX ?? touchStartX.current;
+    const distance = touchStartX.current - endX;
+    touchStartX.current = null;
+    if (Math.abs(distance) < 42) return;
+    goTo(index + (distance > 0 ? 1 : -1));
+  };
+
+  const item = items[index];
+
   return (
-    <div className="media-carousel">
-      <div
-        className="media-carousel-track"
-        ref={trackRef}
-        onScroll={updateIndex}
-        onKeyDown={onKeyDown}
-        tabIndex="0"
-        aria-label="MARIS project video gallery"
-      >
-        {items.map((item, i) => (
-          <div className="media-carousel-slide" key={`${item.src}-${i}`}>
-            <CarouselMediaItem item={item} active={i === index} />
-            <div className="media-caption media-carousel-caption">
-              <Bi value={item.label || fallbackLabel} />
-            </div>
-          </div>
-        ))}
+    <div
+      className="media-carousel"
+      onKeyDown={onKeyDown}
+      onTouchStart={onTouchStart}
+      onTouchEnd={onTouchEnd}
+      tabIndex="0"
+      aria-label="MARIS project video gallery"
+    >
+      <div className="media-carousel-slide" key={item.src}>
+        <CarouselMediaItem item={item} active />
+        <div className="media-caption media-carousel-caption">
+          <Bi value={item.label || fallbackLabel} />
+        </div>
       </div>
 
       <div className="media-carousel-controls">
