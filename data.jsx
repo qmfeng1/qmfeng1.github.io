@@ -13,7 +13,7 @@ const SITE = {
     },
     headline: {
       en: ["I build robots that ", "move, sense, and learn", " in water."],
-      zh: ["创造能在水中", "运动、感知与学习", "的机器人"],
+      zh: ["创造能在水中", "运动、感知与学习", " 的机器人"],
     },
     text: {
       en: "I build end-to-end robotic systems across mechanism design, embedded control, multisensor perception, system integration, and underwater validation — turning concepts into controllable, measurable, experimentally verified hardware.",
