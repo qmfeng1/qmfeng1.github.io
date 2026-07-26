@@ -103,7 +103,7 @@ const SITE = {
           zh: "一套端到端分布式机器人系统，集成 10+ 个驱动、传感、感知、通信与安全子系统，并通过 Steam Deck 对水下实验进行实时控制。",
         },
         metrics: [
-          { v: "7 Hz", k: { en: "wing flapping", zh: "机翼扑动频率" } },
+          { v: "6 Hz", k: { en: "wing flapping", zh: "机翼扑动频率" } },
           { v: "10+", k: { en: "integrated subsystems", zh: "集成子系统" } },
         ],
         tags: ["Raspberry Pi 5", "CAN/MIT Motor", "Multi-sensor", "Steam Deck"],
@@ -384,7 +384,7 @@ const SITE = {
   contact: {
     heading: {
       en: "Let's build reliable robotic systems for difficult environments.",
-      zh: "迫不及待去研究更复杂的机器人了！",
+      zh: "迫不及待去研究更有趣的机器人了！",
     },
     links: [
       {
