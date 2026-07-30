@@ -363,13 +363,19 @@ const SITE = {
       {
         title: { en: "Lift Reversal from Vortex-Surface Phase Coupling in a Heaving Foil near a Free Surface", zh: "近自由表面振荡翼中由涡–表面相位耦合引起的升力反转" },
         authors: ["Qimin Feng", "Tianjun Han", "Qiang Zhong"],
-        venue: { en: "Journal of Fluid Mechanics · Under review · First author", zh: "Journal of Fluid Mechanics · 在审 · 第一作者" },
+        venue: { en: "Journal of Fluid Mechanics · Preprint · Submitted 2025 · First author", zh: "Journal of Fluid Mechanics · 预印本 · 2025 年投稿 · 第一作者" },
         links: [{ label: "arXiv", href: "https://arxiv.org/abs/2512.12485" }],
+      },
+      {
+        title: { en: "Write-Safe Flow Field Mapping under Ambiguous Onboard Sensing and Localization Drift", zh: "模糊机载感知与定位漂移下的写入安全流场建图" },
+        authors: ["L. Jin", "Qimin Feng", "P. Gunnarson", "Qiang Zhong"],
+        venue: { en: "IEEE Robotics and Automation Letters · Preprint · Submitted 2026 · Second author", zh: "IEEE Robotics and Automation Letters · 预印本 · 2026 年投稿 · 第二作者" },
+        links: [],
       },
       {
         title: { en: "Inertial Effects on the Mechanical Efficiency of a Semi-Passive Oscillating Hydrofoil Energy Harvester", zh: "惯性效应对半被动振荡水翼能量采集器机械效率的影响" },
         authors: ["Z. Zhang", "Qimin Feng", "Y. Zhu", "Qiang Zhong"],
-        venue: { en: "Renewable Energy · Under review · Second author", zh: "Renewable Energy · 在审 · 第二作者" },
+        venue: { en: "Renewable Energy · Preprint · Submitted 2026 · Second author", zh: "Renewable Energy · 预印本 · 2026 年投稿 · 第二作者" },
         links: [{ label: "arXiv", href: "https://arxiv.org/abs/2606.11126" }],
       },
       {
