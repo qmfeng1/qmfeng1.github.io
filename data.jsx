@@ -370,7 +370,7 @@ const SITE = {
         title: { en: "Write-Safe Flow Field Mapping under Ambiguous Onboard Sensing and Localization Drift", zh: "模糊机载感知与定位漂移下的写入安全流场建图" },
         authors: ["L. Jin", "Qimin Feng", "P. Gunnarson", "Qiang Zhong"],
         venue: { en: "IEEE Robotics and Automation Letters · Preprint · Submitted 2026 · Second author", zh: "IEEE Robotics and Automation Letters · 预印本 · 2026 年投稿 · 第二作者" },
-        links: [],
+        links: [{ label: "arXiv", href: "https://arxiv.org/pdf/2607.27713" }],
       },
       {
         title: { en: "Inertial Effects on the Mechanical Efficiency of a Semi-Passive Oscillating Hydrofoil Energy Harvester", zh: "惯性效应对半被动振荡水翼能量采集器机械效率的影响" },
